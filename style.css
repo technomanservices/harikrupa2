@@ -1,0 +1,637 @@
+/* style.css - MRF Inspired Design */
+:root {
+    --mrf-red: #da251d; /* Classic striking red */
+    --mrf-red-hover: #b91d17;
+    --mrf-black: #000000;
+    --mrf-dark: #1f1f1f;
+    --mrf-grey: #f5f5f5;
+    --mrf-border: #e0e0e0;
+    --white: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --shadow-flat: 0 4px 0 rgba(0,0,0,0.05); /* very flat rigid shadow */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Mukta', sans-serif;
+    color: var(--text-main);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Typography Overrides for Industrial Feel */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', 'Mukta', sans-serif;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--mrf-black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center { text-align: center; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.ml-1 { margin-left: 0.25rem; }
+.text-mrf-red { color: var(--mrf-red) !important; }
+.text-white { color: var(--white) !important; }
+.text-muted { color: var(--text-muted); }
+.bg-mrf-red { background-color: var(--mrf-red); color: white; }
+.bg-mrf-dark { background-color: var(--mrf-dark); color: white; }
+.bg-mrf-grey { background-color: var(--mrf-grey); }
+
+/* Dividers */
+.red-divider {
+    height: 4px;
+    width: 50px;
+    background: var(--mrf-red);
+    margin-bottom: 1.5rem;
+}
+
+.red-divider.center {
+    margin: 0 auto 2rem auto;
+}
+
+/* MRF Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 35px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    /* sharp edges */
+    border-radius: 2px;
+}
+
+.btn-mrf-red {
+    background: var(--mrf-red);
+    color: var(--white);
+}
+
+.btn-mrf-red:hover {
+    background: var(--mrf-black);
+    color: var(--white);
+}
+
+.btn-mrf-outline {
+    background: transparent;
+    border: 2px solid var(--mrf-red);
+    color: var(--mrf-red);
+}
+
+.btn-mrf-outline:hover {
+    background: var(--mrf-red);
+    color: var(--white);
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* Navbar */
+.top-brand-band {
+    width: 100%;
+    height: 6px;
+    background: var(--mrf-red);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.navbar.mrf-nav {
+    position: fixed;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--mrf-border);
+    transition: var(--transition);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    color: var(--mrf-black);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo-accent {
+    color: var(--mrf-red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: var(--mrf-black);
+    position: relative;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--mrf-red);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--mrf-black);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 86px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./public/hero.png') center/cover no-repeat;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero-text-box {
+    max-width: 650px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-left: 8px solid var(--mrf-red);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--mrf-black);
+}
+
+.hero .red-line {
+    width: 80px;
+    height: 5px;
+    background: var(--mrf-red);
+    margin-bottom: 1.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--mrf-black);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+.hero .desc {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* About Layout */
+.about-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+}
+
+.mrf-features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.mrf-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--mrf-black);
+}
+
+.mrf-features-list i {
+    color: var(--mrf-red);
+    font-size: 1.2rem;
+}
+
+.about-image-cont {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mrf-image-box {
+    position: relative;
+    border: 10px solid var(--mrf-grey);
+}
+
+.about-poster-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+}
+
+.exp-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.exp-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Brand Stripe */
+.brand-stripe {
+    padding: 30px 0;
+}
+.brand-stripe h3 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Speciality Grid */
+.speciality h2 {
+    font-size: 2.8rem;
+}
+
+.mrf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.mrf-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid var(--mrf-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mrf-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--mrf-red);
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: var(--transition);
+}
+
+.mrf-card:hover {
+    border-color: var(--mrf-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.mrf-card:hover::after {
+    transform: scaleX(1);
+}
+
+.mrf-icon {
+    font-size: 3.5rem;
+    color: var(--mrf-red);
+    margin-bottom: 1.5rem;
+}
+
+.mrf-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact */
+.contact h2 {
+    font-size: 2.8rem;
+}
+
+.mrf-contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--white);
+    border: 1px solid var(--mrf-border);
+    box-shadow: 10px 10px 0 var(--mrf-grey);
+}
+
+.mrf-info-panel {
+    flex: 1;
+    min-width: 320px;
+    padding: 3rem;
+}
+
+.mrf-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.mrf-info-item i {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.mrf-info-item h4 {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.mrf-info-item p {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.map-wrapper {
+    border: 2px solid #333;
+}
+
+.mrf-form-panel {
+    flex: 2;
+    min-width: 320px;
+    padding: 3rem;
+}
+
+.mrf-form-panel h3 {
+    font-size: 2rem;
+}
+
+.mrf-form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mrf-form-row .mrf-input-wrap {
+    flex: 1;
+}
+
+.mrf-input-wrap {
+    margin-bottom: 1.5rem;
+}
+
+.mrf-input-wrap label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--mrf-black);
+    letter-spacing: 0.5px;
+}
+
+.mrf-form input,
+.mrf-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--mrf-border);
+    background: var(--mrf-grey);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--mrf-black);
+    transition: var(--transition);
+    border-radius: 2px; /* extremely sharp */
+}
+
+.mrf-form input:focus,
+.mrf-form textarea:focus {
+    outline: none;
+    border-color: var(--mrf-red);
+    background: var(--white);
+}
+
+/* Footer */
+.mrf-footer {
+    background: var(--mrf-dark);
+    color: var(--white);
+    padding: 60px 0 20px;
+    border-top: 5px solid var(--mrf-red);
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.mrf-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    margin: 0 5px;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.mrf-socials a:hover {
+    background: var(--mrf-red);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    color: #888;
+}
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 5px; /* sharp edges for mrf aesthetic too */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.whatsapp-widget:hover {
+    transform: translateY(-5px);
+    background: #1ebc57;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero h1 { font-size: 3.5rem; }
+    .mrf-form-row { flex-direction: column; gap: 0; }
+    .hero-text-box { margin-top: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        transition: var(--transition);
+        border-bottom: 2px solid var(--mrf-red);
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--mrf-border);
+    }
+
+    .nav-links a:hover {
+        background: var(--mrf-grey);
+        padding-left: 25px;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .menu-icon { display: block; }
+    
+    .hero h1 { font-size: 2.8rem; }
+    .hero-actions { flex-direction: column; }
+    .mrf-features-list { grid-template-columns: 1fr; }
+    
+    .mrf-contact-layout { box-shadow: none; border: none; }
+    .mrf-form-panel { padding: 2rem 0; }
+    .mrf-info-panel { padding: 2rem; }
+}
